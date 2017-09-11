@@ -1,0 +1,158 @@
+table{
+  /*margin: 0 auto;*/
+  width: 100%;
+  /*clear: both;*/
+  border-collapse: collapse;
+  table-layout: fixed; 
+  word-wrap:break-word;
+	background-color:#E8EBF4;
+	font-family:ariel sans-serif;
+	font-size:18px;
+	
+}
+
+/*card view*/
+
+    table.cards {
+        background-color: transparent;
+    }
+
+    /*--[  This does the job of making the table rows appear as cards ]----------------*/
+    .cards tbody tr {
+        float: left;
+        margin: 10px;
+        border: 1px solid #aaa;
+        box-shadow: 3px 3px 6px rgba(0,0,0,0.25);
+        background-color: white;
+    }
+    .cards tbody td {
+        display: block;
+        width: 330px;
+        overflow: hidden;
+        text-align: left;
+    }
+
+    /*---[ The remaining is just more dressing to fit  preferances ]-----------------*/
+  
+    .table .glyphicon {
+        font-size: 20px;
+    }
+
+    .cards .glyphicon {
+        font-size: 100px;
+    }
+
+    .cards tbody label {
+        display: block;
+        position: relative;
+        font-size: 85%;
+        font-weight: normal;
+        top: -5px;
+        left: -3px;
+        float: left;
+        color: 80808;
+    }
+    .cards tbody td:nth-child(1) {
+        text-align: center;
+    }
+
+#drop{
+	background-color:rgb(87,47,136);
+	width:100%;
+	hover:cambodian;
+}
+
+th {
+	
+  color: #ffffff;
+  background-color: #522F91;
+  border: 2px solid #ffffff;
+  text-align: center;
+  padding: 8px;
+	
+}
+
+ td {
+ 
+	border: 2px solid #ffffff;
+  text-align: left;
+  padding: 8px;
+	 border-color:rgb(255,205,0);
+}
+
+table.dataTable tr:nth-child(even)  {
+	background-color: #CED5E9; 
+}
+
+ .dataTables_filter input  {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+	 width: 110px;
+   border-radius: 5px;
+   color: black;
+}
+
+
+/* Style all font awesome icons */
+.fa {
+    padding: 10px;
+    font-size: 10px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+		float: right;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background-color: #3B5998;
+			
+    color: white;
+	
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+	
+}
+
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+	
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+	
+
+	}
+.hide{
+    display:none;
+}
+
+
+#btToggleDisplay{
+	/*float:right;*/
+	background-color:white;
+	border: rotate3d;
+	width: 60px;
+	position: absolute;
+	/*top: 22px;*/
+	left: 0px;
+}
+
+
+
