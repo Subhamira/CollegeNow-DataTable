@@ -61,8 +61,10 @@
 		            <div class="col-sm-12">
                 <button id="btToggleDisplay" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list" align="center"></span>Toggle</button>
             </div>
-
-
+<!--contact us button=====================================================================================-->
+<!--<form action="https://www.collegenowgc.org/find-scholarships/">
+    <button type="submit" value="Contact Us" />
+</form>-->
 <!--social media buttons--------------------------------------------------------------------------------------->
 <a href="https://www.facebook.com/share" class="fa fa-facebook" align="right"></a>
 <a href="https://www.twitter.com/share" class="fa fa-twitter"   align="right"></a>
@@ -103,7 +105,7 @@
         </tr>
       </thead>
 	<!---selected dropdown table footer---------------------------------------------------------------------->
-     <tfoot>        
+    <!--<tfoot>        
         <tr>
           <th>DropbdownSelection</th>
        
@@ -118,7 +120,7 @@
           <th>Text in the result listing_2</th>
          <th>        </th>
         </tr>
-      </tfoot>
+      </tfoot>-->
     </table>
 
 
@@ -268,7 +270,7 @@
         							
 												
 	//function for selected dropdown---------------------------------------------------------------------------------									
-                    myTable.columns([/*0,*/3,4,5,6,9]).every( function () {
+                    myTable.columns([/*0*/,3,4,5,6,9]).every( function () {
                       var column = this;
 												var select = $('<select id="drop"><option value="" >Show All</option></select>')
 														.appendTo( $(column.header()).empty() )
@@ -307,7 +309,7 @@
     </script>
 		
 <!--send email to college now------------------------------------------------------------------------------> 
-<div id="email">
+<!--<div id="email">
 			
 		<form action="mailto:subha_mira@yahoo.com" method="post" enctype="text/plain" align="center">
 			Your Name:<br>
@@ -319,7 +321,7 @@
 			<input type="submit" value="E-mail">
 			<input type="reset" value="Reset">
 		</form>
-</div>		
+</div>-->		
 		
 		
   </body>
