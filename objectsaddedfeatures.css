@@ -4,11 +4,37 @@ table{
   /*clear: both;*/
   border-collapse: collapse;
   table-layout: fixed; 
-  word-wrap:break-word;
+  word-wrap:break-word; 
 	background-color:#E8EBF4;
 	font-family:ariel sans-serif;
 	font-size:18px;
 	
+}
+/*drop button*/
+  
+  .select-style {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 190px;
+   background-color: #522F91;
+   outline: none;
+}
+
+/*drop down content*/
+
+ .select-style select {
+   outline: none;
+   background: transparent;
+   border: none;
+   font-size: 16px;
+   height: 29px;
+   padding: 5px;
+   width: 280px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   color: white;
 }
 
 /*card view*/

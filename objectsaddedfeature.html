@@ -31,7 +31,33 @@
 	
 	<!--toggle between table and card view---------------------------------------------------------------------->
 	<body>
-	<div class="container">
+<div class="student_status">
+
+<p>What is your student status?</p>
+
+<div class="select-style">
+
+  <select id="Student">
+
+    <option style="color:white">Student Status</option>
+ 
+   <option style="color:black" value="High School Students">High School Students</option>
+
+    <option style="color:black" value="Undergrad">Undergrad</option>
+
+    <option style="color:black" value="College Graduate">College Graduate</option>
+
+    <option style="color:black" value="Adult Learner">Adult Learner</option>
+
+    <option style="color:black" value="PHD">PHD</option>
+
+    <option style="color:black" value="Undocumented">Undocumented</option>
+
+   </select>
+ 
+ </div> 
+</div>
+	<div class="container" style="display: none;">
 		            <div class="col-sm-12">
                 <button id="btToggleDisplay" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list" align="center"></span>Toggle</button>
             </div>
@@ -106,12 +132,13 @@
     var result = '' 
     var DATA = [] 
     var arr = [] 
-    var input1 = 'High School Student' 
+	var sortedData = []
+    var input1 = ''
     
     oReq.open("GET", url, true); 
     oReq.responseType = "arraybuffer"; 
     
-    oReq.onload = function(result){ 
+    oReq.onload = function(e){ 
     var arraybuffer = oReq.response; 
     // convert data to binary string 
     var data = new Uint8Array(arraybuffer) 
@@ -126,16 +153,46 @@
     // Get worksheet 
     var worksheet = workbook.Sheets[first_sheet_name]; 
     result = XLSX.utils.sheet_to_json(worksheet);
-    
-		
+	console.log(result)
+	}    
+	
+	oReq.send()
 
+	function sort(arr){
+		for(var i = 0; i < arr.length; i++){
+			if(arr[i].DropbdownSelection === input1){
+				sortedData.push(arr[i])
+				}
+			}
+	}	
+
+	
+
+	$(document).ready(function(){
+	$("#Student").change(function(){
+	$('.student_status').fadeOut(1000);
+	$('.container').fadeIn(1000);	
+	input1 = $("#Student option:selected").text()
+  			getStudentData()
+		})
+	})		
+	
+	var sorted_results = ''
+	
+	function getStudentData(){
+		sort(result)
+		sorted_results = sortedData
+		createTable()
+	}
+
+	function createTable(){
       $(document).ready(function() { 
         console.log(result) 
 			
 
 		//set undefined or empty data as not set----------------------------------------------------------------------
 
-        var dataSet = result, 
+        var dataSet = sorted_results //result, 
             columnDefs = [{
                            "data": "DropbdownSelection", "defaultContent": "<i>Not set</i>"}, 
                           { "data": "Text in the result listing", "defaultContent": "<i>Not set</i>" }, 
@@ -211,10 +268,10 @@
         							
 												
 	//function for selected dropdown---------------------------------------------------------------------------------									
-                    myTable.columns([0,3,4,5,6,9]).every( function () {
+                    myTable.columns([/*0,*/3,4,5,6,9]).every( function () {
                       var column = this;
 												var select = $('<select id="drop"><option value="" >Show All</option></select>')
-														.appendTo( $(column.footer()).empty() )
+														.appendTo( $(column.header()).empty() )
 														.on( 'change', function () {
 																var val = $.fn.dataTable.util.escapeRegex(
 																		$(this).val()
@@ -245,7 +302,7 @@
           }) 
     } 
     
-    oReq.send(result);
+    //oReq.send(result);
     
     </script>
 		
