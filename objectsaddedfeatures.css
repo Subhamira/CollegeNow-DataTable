@@ -10,8 +10,19 @@ table{
 	font-size:18px;
 	
 }
+
+/*paragraph*/
+p {
+color: #522F91;
+font-size: 250%;
+font-family:ariel sans-serif;
+position: absolute;
+top: 36%;
+left: 39%;
+}
+
 /*drop button*/
-  
+ 
   .select-style {
    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
    height: 29px;
@@ -19,6 +30,9 @@ table{
    width: 190px;
    background-color: #522F91;
    outline: none;
+   position: absolute;
+   top: 43%;
+   left: 43%;
 }
 
 /*drop down content*/
@@ -36,6 +50,10 @@ table{
    border-radius: 5px;
    color: white;
 }
+
+/*question & dd position*/
+
+
 
 /*card view*/
 
