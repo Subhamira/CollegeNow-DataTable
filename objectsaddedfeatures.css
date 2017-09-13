@@ -12,13 +12,14 @@ table{
 }
 
 /*paragraph*/
+
 p {
 color: #522F91;
 font-size: 250%;
 font-family:ariel sans-serif;
 position: absolute;
 top: 36%;
-left: 39%;
+left: 27%;
 }
 
 /*drop button*/
@@ -106,27 +107,39 @@ left: 39%;
 	hover:cambodian;
 }
 
+
 th {
 	
   color: #ffffff;
   background-color: #522F91;
-  border: 2px solid #ffffff;
+  border: 2px;
+  border-style: solid;
+  border-color: green;
   text-align: center;
   padding: 8px;
 	
 }
 
- td {
- 
-	border: 2px solid #ffffff;
-  text-align: left;
-  padding: 8px;
-	 border-color:rgb(255,205,0);
+
+table.dataTable tr:hover {
+background-color: #FFCD00;
 }
 
-table.dataTable tr:nth-child(even)  {
-	background-color: #CED5E9; 
+
+ td {
+ 
+	border: 2px: 
+border-style:  solid;
+  text-align: left;
+  padding: 8px;
+	 border-color: #FFCD00;
 }
+
+table.dataTable tr:nth-child(odd) {
+background-color: #CED5E9;
+}
+
+
 
  .dataTables_filter input  {
    -webkit-border-radius: 5px;
@@ -190,7 +203,7 @@ table.dataTable tr:nth-child(even)  {
 
 #btToggleDisplay{
 	/*float:right;*/
-	background-color:white;
+	background-color: white;
 	border: rotate3d;
 	width: 60px;
 	position: absolute;
