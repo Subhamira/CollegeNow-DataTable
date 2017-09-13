@@ -98,6 +98,7 @@ th {
 	
 }
 
+
  td {
  
 	border: 2px solid #ffffff;
@@ -179,6 +180,5 @@ table.dataTable tr:nth-child(even)  {
 	/*top: 22px;*/
 	left: 0px;
 }
-
 
 

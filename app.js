@@ -15,25 +15,25 @@ function getStudentData(){
 	createTable()
 	}
 
-function createTable(){
+function createTable(){ //TODO: This should be a function that takes a list of objects as an arg
 	$(document).ready(function(){ 
     console.log(result) 		
 
 		//set undefined or empty data as not set----------------------------------------------------------------------
 
 	var dataSet = sorted_results //result, 
-    columnDefs = [{
-    		"data": "DropbdownSelection", "defaultContent": "<i>Not set</i>"}, 
-            { "data": "Text in the result listing", "defaultContent": "<i>Not set</i>" }, 
-            { "data": "Text in the result listing_1", "defaultContent": "<i>Not set</i>"}, 
-            { "data": "Input box number only", "defaultContent": "<i>Not set</i>" }, 
-            { "data": "Input box number only_1", "defaultContent": "<i>Not set</i>" }, 
-            { "data": "Dropdown", "defaultContent": "<i>Not set</i>" }, 
-            { "data": "Multi-Select", "defaultContent": "<i>Not set</i>" }, 
-            { "data": "Input Box", "defaultContent": "<i>Not set</i>"}, 
-            { "data": "Input Box_1", "defaultContent": "<i>Not set</i>" }, 
-            { "data": "Text in the result listing_2", "defaultContent": "<i>Not set</i>" }, 
-            { "data": "Text in the result listing (Hyperlink) open in NEW WINDOW", "defaultContent": "<i>Not set</i>", 
+    columnDefs = [
+    		{ "data": "DropbdownSelection", "defaultContent": "<i> - </i>"}, 
+            { "data": "Text in the result listing", "defaultContent": "<i> - </i>" }, 
+            { "data": "Text in the result listing_1", "defaultContent": "<i> - </i>"}, 
+            { "data": "Input box number only", "defaultContent": "<i> - </i>" }, 
+            { "data": "Input box number only_1", "defaultContent": "<i> - </i>" }, 
+            { "data": "Dropdown", "defaultContent": "<i> - </i>" }, 
+            { "data": "Multi-Select", "defaultContent": "<i> - </i>" }, 
+            { "data": "Input Box", "defaultContent": "<i> - </i>"}, 
+            { "data": "Input Box_1", "defaultContent": "<i> - </i>" }, 
+            { "data": "Text in the result listing_2", "defaultContent": "<i> - </i>" }, 
+            { "data": "Text in the result listing (Hyperlink) open in NEW WINDOW", "defaultContent": "<i> - </i>", 
             	"render": function(data, type, row, meta){
                 	if(type === 'display'){
                     dataSet = '<a href="' + data + '">' + data + '</a>';
@@ -43,7 +43,14 @@ function createTable(){
   //modal-----------------------------------------------------------------------------------------------       
 	var myTable;
     myTable = $("#data-table").DataTable({
-    	responsive: {
+    	fixedHeader: true,
+    	iDisplayLength: 10,
+    	responsive: false,
+    	columnDefs: [
+			{targets:[0],visible: false},
+			{targets:' _all', 'width': '100px'}
+		],
+    	//responsive: {
 		details: {
 			display: $.fn.dataTable.Responsive.display.modal({
 				header: function(row){
@@ -55,7 +62,8 @@ function createTable(){
 					tableClass: 'table'
 				})
 			}
-		},
+
+		/*}*/,
     //dom: "Blfrtip"
 	dom: '<"top"B><"top"l><"Search"f>rt<"bottom"ip><"clear">',
     // buttons: ['copy', 'excel', 'pdf', 'print'],
@@ -72,7 +80,7 @@ function createTable(){
 				$(column).text("Student Status"); 
 			} 
     		else if ($(column).text() === 'Text in the result listing'){ 
-				$(column).text("Scholorship/Award Name"); 
+				$(column).text("Scholarship Name"); 
 			} 
             else if ($(column).text()=== 'Text in the result listing_1'){ 
 				$(column).text("Criteria"); 
@@ -107,10 +115,10 @@ function createTable(){
         							
 												
 //function for selected dropdown---------------------------------------------------------------------------------									
-myTable.columns([3,4,5,6,9]).every(function(){
+myTable.columns(/*[3,4,5,6,9]*/[3,4,5,6,7,8]).every(function(){
 	var column = this;
-	var select = $('<select id="drop"><option value="" >Show All</option></select>')
-		.appendTo( $(column.header()).empty() )
+	var select = $('<select id="drop"><option value="" >Options</option></select>')
+		.appendTo( $(column.header()) )
 		.on( 'change', function () {
 			var val = $.fn.dataTable.util.escapeRegex(
 			$(this).val()
@@ -135,8 +143,3 @@ $("#data-table thead").toggle()
 				
 	}) 
 } 
-
-
-
-
-
