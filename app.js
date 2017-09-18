@@ -36,7 +36,7 @@ function createTable(){ //TODO: This should be a function that takes a list of o
             { "data": "Text in the result listing (Hyperlink) open in NEW WINDOW", "defaultContent": "<i> - </i>", 
             	"render": function(data, type, row, meta){
                 	if(type === 'display'){
-                    dataSet = '<a href="' + data + '">' + data + '</a>';
+                    dataSet = '<a href=' + data + ' target="_blank">Click Here To Apply<a>';
 	                }
                     return dataSet;},                         
             }];
@@ -48,7 +48,9 @@ function createTable(){ //TODO: This should be a function that takes a list of o
     	responsive: false,
     	columnDefs: [
 			{targets:[0],visible: false},
-			{targets:' _all', 'width': '100px'}
+			{targets:' _all', 'width': '100px'},
+			{ "bSortable": false, "aTargets": [0,1,2,3,4,5,6,7,8] },
+			
 		],
     	//responsive: {
 		details: {
@@ -72,6 +74,7 @@ function createTable(){ //TODO: This should be a function that takes a list of o
     "sPaginationType": "full_numbers",		//
     "bFilter" : true,
     "bSort" : true,
+ 
 	//change header name-----------------------------------------------------------------------------------------
     data: dataSet, columns: columnDefs,
     'initComplete': function(settings){ 

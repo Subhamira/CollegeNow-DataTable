@@ -1,5 +1,5 @@
    //create JSON 
-    var url = "./Scholarship_Database.xlsx"; 
+    var url = "./Scholarship_Database(1).xlsx"; 
     var oReq = new XMLHttpRequest(); 
     var result = '' 
     var DATA = [] 
