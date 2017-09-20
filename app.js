@@ -32,7 +32,7 @@ function createTable(){ //TODO: This should be a function that takes a list of o
             { "data": "Ethnic Heritage", "defaultContent": "<i> - </i>" }, 
             { "data": "Open Date", "defaultContent": "<i> - </i>"}, 
             { "data": "Closing Date", "defaultContent": "<i> - </i>" }, 
-            { "data": "Possible Award", "defaultContent": "<i> - </i>" }, 
+            { "data": "Possible Award ", "defaultContent": "<i> - </i>" }, 
             { "data": "Website", "defaultContent": "<i> - </i>", 
             	"render": function(data, type, row, meta){
                 	if(type === 'display'){
@@ -43,26 +43,27 @@ function createTable(){ //TODO: This should be a function that takes a list of o
   //modal-----------------------------------------------------------------------------------------------       
 	var myTable;
     myTable = $("#data-table").DataTable({
-    	//fixedHeader: true,
+    	fixedHeader: true,
+    	autoWidth: false,
     	responsive: {
-								details: {
-									display: $.fn.dataTable.Responsive.display.modal({
-										header: function(row){
-											var data = row.data();
-												return 'Details';
-												}
-										}),
-										renderer: $.fn.dataTable.Responsive.renderer.tableAll({
-											tableClass: 'table'
-										})
-									}
-
-								},
+			details: {
+				display: $.fn.dataTable.Responsive.display.modal({
+				header: function(row){
+				var data = row.data();
+				return 'Details';
+				}
+			}),
+			renderer: $.fn.dataTable.Responsive.renderer.tableAll({
+				tableClass: 'table'
+			})
+		}
+	},
 			iDisplayLength: 10,
     	//responsive: false,
 			columnDefs: [
 			{targets:[0],visible: false},
-			{targets:' _all', 'width': '100px'},
+			{targets:' _all', 'width': '80px'},
+			{targets:'_all', className: "desktop"},
 			{ "bSortable": false, "aTargets": [0,1,2,3,4,5,6,7,8] },
 			
 			],
