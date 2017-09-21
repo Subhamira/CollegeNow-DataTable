@@ -68,9 +68,11 @@ left: 27%;
     }
     .cards tbody td {
         display: block;
-        width: 330px;
+        width: 400px;
         overflow: hidden;
-        text-align: left;
+        text-align: right;
+        font-size:75%;
+        padding:10px;
     }
 
     /*---[ The remaining is just more dressing to fit  preferances ]-----------------*/
@@ -78,7 +80,11 @@ left: 27%;
     .table .glyphicon {
         font-size: 20px;
     }
-
+	.table tbody label {
+		display: none;
+		margin-right: 5px;
+		width: 50px;
+	}   
     .cards .glyphicon {
         font-size: 100px;
     }
@@ -86,15 +92,16 @@ left: 27%;
     .cards tbody label {
         display: block;
         position: relative;
-        font-size: 85%;
+        font-size: 100%;
         font-weight: normal;
         top: -5px;
         left: -3px;
         float: left;
         color: 80808;
+        white-space: nowrap;
     }
     .cards tbody td:nth-child(1) {
-        text-align: center;
+        text-align: right;
     }
 
 #drop{
