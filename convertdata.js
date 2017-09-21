@@ -1,4 +1,4 @@
-   //create JSON 
+   //url gets the excel file 
     var url = "./Scholarship_Database.xlsx"; 
     var oReq = new XMLHttpRequest(); 
     var result = '' 
@@ -9,7 +9,7 @@
     
     oReq.open("GET", url, true); 
     oReq.responseType = "arraybuffer"; 
-    
+    //This function takes the excel data and returns it as JSON
     oReq.onload = function(e){ 
     var arraybuffer = oReq.response; 
     // convert data to binary string 
@@ -29,7 +29,7 @@
 	}    
 	
 	oReq.send()
-
+	//The sort function works with the dropdown question to only return the filtered data from JSON
 	function sort(arr){
 		for(var i = 0; i < arr.length; i++){
 			if(arr[i]['Student Status'] === input1){
