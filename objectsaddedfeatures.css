@@ -5,7 +5,7 @@ table{
   word-wrap:break-word; 
 	background-color:#E8EBF4;
 	font-family:ariel sans-serif;
-	font-size:18px;	
+	font-size:18px;
 }
 
 /*paragraph*/
@@ -48,8 +48,6 @@ left: 27%;
    border-radius: 5px;
    color: white;
 }
-
-
 
 
 
@@ -100,11 +98,11 @@ left: 27%;
     }
 
 #drop{
-	background-color:rgb(87,47,136);
+	background-color: #FFFFFF;
 	width:100%;
-	hover:cambodian;
+	hover: cambodian;
+	color: black;
 }
-
 
 th {
 	
@@ -120,20 +118,7 @@ th {
 
 
 table.dataTable tr:hover {
-background-color: #FFCD00;
 color: #FFCD00;
-}
-
-.ex_highlight table.datatable tr.even:hover, #example tbody tr.even td.highlighted {
-background-color: #FFCD00;
-}
-
-.ex_highlight table.datatable tr.odd:hover, #example tbody tr.odd td.highlighted {
-background-color: #FFCD00;
-}
-
-.ex_highlight_row #example tr.even:hover td.sorting_1 {
-background-color: #FFCD00;
 }
 
  td {
@@ -216,3 +201,6 @@ background-color: white;
 }
 
 
+#btToggleDisplay:hover{
+background: #FFCD00;
+}
