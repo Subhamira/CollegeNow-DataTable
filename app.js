@@ -44,7 +44,7 @@ function createTable(){
 	var myTable;
     myTable = $("#data-table").DataTable({
     	//fixedHeader: true,
-    	/*responsive: {
+    	responsive: {
 								details: {
 									display: $.fn.dataTable.Responsive.display.modal({
 										header: function(row){
@@ -57,9 +57,9 @@ function createTable(){
 										})
 									}
 
-								},*/
+								},
 			iDisplayLength: 10,
-    	responsive: false,
+    	//responsive: false,
 			columnDefs: [
 			{targets:[0],visible: false},//code for first column to make it invisible as the user chooses in first page
 			{targets:' _all', 'width': '100px'},
