@@ -1,3 +1,4 @@
+//when the user selects input the page disappers and gets data according to option selected=================>
 $(document).ready(function(){
 $("#Student").change(function(){
 $('.student_status').fadeOut(1000);
@@ -7,7 +8,7 @@ $('.container').fadeIn(1000);
 	
 })
 })
-
+//creates table with respect to data selected by user=================================================================>
 var sorts = ''
 function getStudentData(){
 	sort(result)
@@ -15,13 +16,12 @@ function getStudentData(){
 	createTable()
 	}
 
-function createTable(){ //TODO: This should be a function that takes a list of objects as an arg
+function createTable(){ 
 	$(document).ready(function(){ 
 
-		//set undefined or empty data as not set----------------------------------------------------------------------
+//set undefined or empty data as ' - ' in every column==============================================================>
  console.log(sorts)
-	var dataSet = sorts,//result, 
-	//console.log(data)
+	var dataSet = sorts,
     columnDefs = [
     		{ "data": "Student Status", "defaultContent": "<i> - </i>"}, 
             { "data": "High School Scholarship/ Award Name", "defaultContent": "<i> - </i>" }, 
@@ -40,11 +40,11 @@ function createTable(){ //TODO: This should be a function that takes a list of o
 	                }
                     return dataSet;},                         
             }];
-  //modal-----------------------------------------------------------------------------------------------       
+  //modal========================================================================================================>
 	var myTable;
     myTable = $("#data-table").DataTable({
     	//fixedHeader: true,
-    	responsive: {
+    	/*responsive: {
 								details: {
 									display: $.fn.dataTable.Responsive.display.modal({
 										header: function(row){
@@ -57,21 +57,22 @@ function createTable(){ //TODO: This should be a function that takes a list of o
 										})
 									}
 
-								},
+								},*/
 			iDisplayLength: 10,
-    	//responsive: false,
+    	responsive: false,
 			columnDefs: [
-			{targets:[0],visible: false},
+			{targets:[0],visible: false},//code for first column to make it invisible as the user chooses in first page
 			{targets:' _all', 'width': '100px'},
 			{ "bSortable": false, "aTargets": [0,1,2,3,4,5,6,7,8] },
 			
 			],
 
 			dom: '<"top"B><"top"l><"Search"f>rt<"bottom"ip><"clear">',
-    // buttons: ['copy', 'excel', 'pdf', 'print'],
+ // buttons: ['copy', 'excel', 'pdf', 'print'],//choose respective export option
+//The below functions customizes the print and pdf export option
 			buttons: [ {
                extend: 'print',
-								dom:'<"bottom"t>',
+								//dom:'<"bottom"t>',
            			title:"Scholorship Lists",
                 customize: function ( win ) {
                     $(win.document.body)
@@ -114,18 +115,17 @@ function createTable(){ //TODO: This should be a function that takes a list of o
 																							
 										}
             			}],
-									"lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
-									"sPaginationType": "full_numbers",		//
+									"lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],//values can be changed as clients requirement
+									"sPaginationType": "full_numbers",
 									"bFilter" : true,
 									"bSort" : true,
 
 									data:dataSet, columns:columnDefs,
-								//dom: "Blfrtip"
-
+								
 });
 												
 //function for selected dropdown=========================================================================================================>								
-myTable.columns(/*[3,4,5,6,9]*/[3,4,5,6,7,8]).every(function(){
+myTable.columns([3,4,5,6,7,8]).every(function(){
 	var column = this;
 	var select = $('<select id="drop"><option value="" >Options</option></select>')
 	
