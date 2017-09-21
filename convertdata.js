@@ -32,8 +32,12 @@
 
 	function sort(arr){
 		for(var i = 0; i < arr.length; i++){
-			if(arr[i].DropbdownSelection === input1){
+			if(arr[i]['Student Status'] === input1){
+		
 				sortedData.push(arr[i])
+//console.log(sortedData)
 				}
 			}
 	}
+
+
