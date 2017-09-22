@@ -29,29 +29,110 @@ function createTable(){
  	columnDefs = [
     		{ "data": "Student Status", "defaultContent": "<i> - </i>"}, 
             { "data": "High School Scholarship/ Award Name", "defaultContent": "<i> - </i>", 
-            render: function (data, type, full, meta) { return '<label>Scholarship:</label>' + data; }}, 
+            	render: function (data, type, full, meta){
+            		if(data == undefined){
+            			data = "-"
+            		}
+					else{
+						return '<label>Scholarship:</label>' + data;
+					}
+				},
+			},
             { "data": "Description/Criteria", "defaultContent": "<i> - </i>",
-			render: function (data, type, full, meta) { return '<label>Description:</label>' + data; }}, 
+            	render: function (data, type, full, meta){
+            		if(data == undefined){
+            			data = "-"
+            		}
+					else{
+						return '<label>Description:</label>' + data;
+					}
+				},
+			},
             { "data": "GPA", "defaultContent": "<i> - </i>",
-			render: function (data, type, full, meta) { return '<label>GPA:</label>' + data;}}, 
-            { "data": "ACT", "defaultContent": "<i> - </i>", 
-			render: function (data, type, full, meta) { return '<label>ACT:</label>' + data; }}, 
-            { "data": "Gender", "defaultContent": "<i> - </i>", 
-			render: function (data, type, full, meta) { return '<label>Gender:</label>' + data; }}, 
-            { "data": "Ethnic Heritage", "defaultContent": "<i> - </i>", 
-			render: function (data, type, full, meta) { return '<label>Ethnic Heritage:</label>' + data; }}, 
+				render: function (data, type, full, meta){ 
+					if(data == undefined){
+						data = "-"
+						return '<label>GPA:</label>' + data;
+					}
+					else{
+						return '<label>GPA:</label>' + data;
+					}
+				},
+			},
+            { "data": "ACT", "defaultContent": "<i> - </i>",
+            	render: function (data, type, full, meta){
+            		if(data == undefined){
+            			data = "-"
+            			return '<label>ACT:</label>' + data;
+            		}
+					else{
+						return '<label>ACT:</label>' + data;
+					}
+				},
+			},
+            { "data": "Gender", "defaultContent": "<i> - </i>",
+            	render: function (data, type, full, meta){
+            		if(data == undefined){
+            		 	data = "-"
+            		 	return '<label>Gender:</label>' + data;
+            		}
+					else{
+						return '<label>Gender:</label>' + data;
+					}
+				},
+			},
+            { "data": "Ethnic Heritage", "defaultContent": "<i> - </i>",
+            	render: function (data, type, full, meta){
+            		if(data == undefined){
+            			data = "-"
+            			return '<label>Ethnic Heritage:</label>' + data;
+            		}
+					else{
+						return '<label>Ethnic Heritage:</label>' + data;
+					}
+				},
+			},
             { "data": "Open Date", "defaultContent": "<i> - </i>",
-			render: function (data, type, full, meta) { return '<label>Open Date:</label>' + data; }}, 
+            	render: function (data, type, full, meta){
+            		if(data == undefined){
+            			data = "-"
+            			return '<label>Open Date:</label>' + data;
+            		}
+					else{
+						return '<label>Open Date:</label>' + data;
+					}
+				},
+			},
             { "data": "Closing Date", "defaultContent": "<i> - </i>", 
-			render: function (data, type, full, meta) { return '<label>Closing Date:</label>' + data; }}, 
+            	render: function (data, type, full, meta){
+            		if(data == undefined){
+            			data = "-"
+						return '<label>Closing Date:</label>' + data;
+            		}
+					else{
+						return '<label>Closing Date:</label>' + data;
+					}
+				},
+			},
             { "data": "Possible Award ", "defaultContent": "<i> - </i>", 
-			render: function (data, type, full, meta) { return '<label>Possible Award:</label>' + data; }}, 
+            	render: function (data, type, full, meta){
+            		if(data == undefined){
+            			data = "-"
+            			return '<label>Possible Award:</label>' + data;
+            		}
+					else{
+						return '<label>Possible Award:</label>' + data;
+					}
+				},
+			},
             { "data": "Website", "defaultContent": "<i> - </i>", 
             	"render": function(data, type, row, meta){
                 	if(type === 'display'){
                     dataSet = '<a href=' + data + ' target="_blank">Click Here To Apply<a>'
 	                }
-                    return dataSet;},                         
+                    return '<label>Website:</label>' + dataSet;
+                	
+                },                         
             }];
   //This creates the data-table and adds attributes. For instance, fixedHeader keeps the headers on the top of the page 
   //even after the page is scrolled. There are more attributes available in the datatables documentation available online. 
