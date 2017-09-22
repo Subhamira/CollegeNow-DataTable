@@ -2,7 +2,7 @@
 $(document).ready(function(){
 $("#Student").change(function(){
 $('.student_status').fadeOut(1000);
-$('.container').fadeIn(1000);	
+$('#container-main').fadeIn(1000);	
 	input1 = $("#Student option:selected").text()
   		getStudentData()
 })
@@ -61,7 +61,7 @@ function createTable(){
     	autoWidth: true,
 
   // responsive is being used to incorporate the modal function with brings up the detailed view
-    	responsive: {
+  	responsive: {
 			details: {
 				display: $.fn.dataTable.Responsive.display.modal({
 				header: function(row){
@@ -74,14 +74,15 @@ function createTable(){
                 })
 			}
 		},
-		
+	
+
 	//Sets the default amount of rows shown
 			iDisplayLength: 10,
 	//The columnDefs below set some specific params to certain columns. 
 			columnDefs: [
 			{targets:[0],visible: false},
-			{targets:' _all', 'width': '80px'},
-			{targets:'_all', className: "desktop"},
+//			{targets:' _all', 'width': '80px'},
+//			{targets:'_all', className: "desktop"},
 			{ "bSortable": false, "aTargets": [0,1,2,3,4,5,6,7,8] },
 			
 			],
@@ -90,14 +91,8 @@ function createTable(){
     
     // buttons creates the PDF and Print buttons
 			buttons: [ 'pdf', 'print' ],
-	// LendthMenu displays the amount of "items per page" options. 
-    	"lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
-    	"sPaginationType": "full_numbers",		
-    // This makes the columns sortable
-    	"bFilter" : true,
-    	"bSort" : true,
- // buttons: ['copy', 'excel', 'pdf', 'print'],//choose respective export option
-//The below functions customizes the print and pdf export option
+ 	// buttons: ['copy', 'excel', 'pdf', 'print'],//choose respective export option
+	//The below functions customizes the print and pdf export option
 		buttons: [ {
         extend: 'print',
 		//dom:'<"bottom"t>',
@@ -166,6 +161,7 @@ column.data().unique().sort().each(function(d,j){
 	select.append( '<option value="'+d+'">'+d+'</option>' )
 	});
 });
+
 //function for toggle between table view and card view 									
 $('#btToggleDisplay').on('click', function(){
 $("#data-table").toggleClass('cards')
