@@ -216,6 +216,7 @@ function createTable(){
                         '<img src="https://centricconsulting.com/wp-content/uploads/2016/11/College-Now-logo.jpg" style="position:absolute; top:0; right:0 ; width=5%; height:5%; padding=50px" />'
 															)
 												.watermark = {text: 'CollegeNow', color: 'blue', opacity: 0.1};
+							
 					},
 				}),		
 					$.extend(true, {}, buttonExp,{ 
