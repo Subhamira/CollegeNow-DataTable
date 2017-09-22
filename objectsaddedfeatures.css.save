@@ -113,7 +113,6 @@ th {
   border: 2px;
   border-style: solid;
   border-color: green;
-  text-align: center;
   padding: 8px;
   width: 100px;	
 }
@@ -130,6 +129,10 @@ border-style:  solid;
   text-align: center;
   padding: 8px;
 	 border-color: #FFCD00;
+}
+
+th.dt-center, td.dt-center { 
+text-align: center; 
 }
 
 table.dataTable tr:nth-child(odd) {
