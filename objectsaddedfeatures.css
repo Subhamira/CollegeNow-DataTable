@@ -127,8 +127,12 @@ th {
   border: 2px;
   border-style: solid;
   border-color: green;
-  text-align: center;
   padding: 8px;
+}
+
+.table thead,
+.table th {
+text-align: center;
 }
 
 table.dataTable tr:hover {
@@ -139,10 +143,11 @@ td {
  
 	border: 2px;
 	border-style:  solid;
-	text-align: left;
+	text-align: center;
   	padding: 8px;
 	border-color: #FFCD00;
 }
+
 
 table.dataTable tr:nth-child(odd) {
 background-color: #CED5E9;
