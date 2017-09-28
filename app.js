@@ -212,7 +212,7 @@ function createTable(){
 		exportOptions: {
 			stripHtml: false
 			},
-		},
+		
         title:"Scholorship Lists",
         customize: function ( win ) {
 						$(win.document.body)
