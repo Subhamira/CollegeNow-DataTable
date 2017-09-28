@@ -209,6 +209,10 @@ function createTable(){
         extend: 'print',
 				
 		//dom:'<"bottom"t>',
+		exportOptions: {
+			stripHtml: false
+			},
+		
         title:"Scholorship Lists",
         customize: function ( win ) {
 						$(win.document.body)
@@ -226,9 +230,9 @@ function createTable(){
 					orientation:'landscape',
 					title:'Scholorship Lists',
 					exportOptions: {
+						stripHtml: false,	
 						columns: [1,2,3,4,5,6,7,8,9,10],
-						
-							
+								
 				},
                 	customize: function ( doc ) {
                     doc.content.splice( 1, 0, 
