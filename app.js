@@ -207,6 +207,7 @@ function createTable(){
 		buttons: [
 			 $.extend(true, {}, buttonExp,{
         extend: 'print',
+				
 		//dom:'<"bottom"t>',
 		exportOptions: {
 			stripHtml: false
@@ -225,6 +226,7 @@ function createTable(){
 				}),		
 					$.extend(true, {}, buttonExp,{ 
 					extend: 'pdfHtml5',
+					messageBottom: 'Powered by Subha Venkatesan, Steven Moats, Wesley Beckette-El',
 					orientation:'landscape',
 					title:'Scholorship Lists',
 					exportOptions: {
